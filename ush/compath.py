@@ -3,6 +3,10 @@
 # Purpose: Given the relative path of a COM directory, return the corresponding absolute
 #          path. For COMIN paths, a search is performed in the following order:
 #              1. the COMPATH variable in an envir-insensitive manner
+#                 Note: needs to be more like this: 
+#                     (including ${envir}/com/${NET})
+#                     /scratch2/NCEPDEV/fv3-cam/Matthew.Pyle/para/com/href
+
 #              2. the COM path list in an envir-sensitive manner
 #              3. the production paths - success if only one match is found
 #          For COMOUT directories ('-o' flag), the COMROOT variable is prepended to the
@@ -36,7 +40,7 @@ if path.exists('/lfs/h1'):
         '/comh2': '/lfs/h2/ops/<envir>/com',
     }
 else:
-    com_aliases = {' ':' ',}
+    com_aliases = {' ': ' ',}
 
 # STRUCTURE: <envir>/<com>/<NET>/<version>/<RUN><...>
 # NET and version are required
