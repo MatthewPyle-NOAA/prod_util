@@ -36,7 +36,7 @@ if path.exists('/lfs/h1'):
         '/comh2': '/lfs/h2/ops/<envir>/com',
     }
 else:
-    err_exit('Unable to find /lfs/h1. Are you on WCOSS?')
+    com_aliases = {' ':' ',}
 
 # STRUCTURE: <envir>/<com>/<NET>/<version>/<RUN><...>
 # NET and version are required
