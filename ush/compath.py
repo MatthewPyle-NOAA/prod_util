@@ -3,10 +3,15 @@
 # Purpose: Given the relative path of a COM directory, return the corresponding absolute
 #          path. For COMIN paths, a search is performed in the following order:
 #              1. the COMPATH variable in an envir-insensitive manner
-#                 Note: needs to be more like this: 
-#                     (including ${envir}/com/${NET})
-#                     /scratch2/NCEPDEV/fv3-cam/Matthew.Pyle/para/com/href
-
+#
+# Note: Details from the production standards document on this variable:
+#
+# To use non-production data, in the job card set the $COMPATH environment
+# variable to a list of absolute paths. compath.py will search those paths for 
+# a match before defaulting to production data.
+#
+# export COMPATH="$COMROOT/nco:/dev/noscrub/First.Last/prod/com/gfs"
+#
 #              2. the COM path list in an envir-sensitive manner
 #              3. the production paths - success if only one match is found
 #          For COMOUT directories ('-o' flag), the COMROOT variable is prepended to the
